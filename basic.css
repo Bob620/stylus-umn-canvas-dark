@@ -1,27 +1,3 @@
-@namespace url(http://www.w3.org/1999/xhtml);
-
-/* Login page */
-
-@-moz-document url-prefix("https://cas.sfu.ca/cas") {
-#page-content {
-	background-color: #333 !important;
-	color: #ccc !important;
-}
-
-header {
-	background: #222 !important;
-}
-
-.form-background {
-	background-color: #333 !important;
-}
-
-form {
-	background-color: #333 !important;
-}
-}
-
-@-moz-document domain("canvas.umn.edu") {
 /* Basic style */
 body {
 	--ic-link-color: white;
@@ -32,6 +8,10 @@ body {
 	--ic-brand-primary: #ccc;
 	--ic-brand-font-color-dark-lightened-30: #ccc;
 	--ic-brand-global-nav-ic-icon-svg-fill--active: white;
+}
+
+[style*="#000000"] {
+	color: white !important;
 }
 
 #nav-tray-portal span {
@@ -47,6 +27,7 @@ body {
 .ic-app-header__menu-list-item--active > a {
 	background: #222 !important;
 }
+
 #menu {
 	border-color: #222 !important;
 }
@@ -106,13 +87,14 @@ img {
 
 .btn,
 .Button {
-	background-color: #111 !important;
+	background-color: #111;
 	border-color: #111;
 	color: var(--ic-brand-font-color-dark) !important;
 }
+
 .btn:hover,
 .Button:hover {
-	background-color: #333 !important;
+	background-color: #333;
 	border-color: #333;
 }
 
@@ -122,12 +104,19 @@ img {
 	text-shadow: none !important;
 }
 
-.mini_calendar .day:hover {
-	background-color: #333;
+.mini-cal-header button {
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 6px;
 }
 
-.mini_calendar .day.today {
-	background-color: #333;
+.mini_calendar .day:hover,
+.mini_calendar .day.related:hover {
+	background-color: rgba(100, 100, 100, 0.5);
+	color: #888;
+}
+
+.mini_calendar .day.has_event {
+	background-color: rgba(100, 100, 100, 0.2);
 }
 
 .mini_calendar .day {
@@ -139,7 +128,8 @@ img {
 }
 
 .mini_calendar .day.today {
-	background-color: #333;
+	background-color: rgba(100, 100, 100, 0.5);
+	color: #888;
 }
 
 #breadcrumbs,
@@ -387,7 +377,9 @@ body.ff .discussionTopicIndexList .discussion-topic .ellipsis::after {
 
 .ic-Table.ic-Table--striped tbody tr:nth-child(2n+1),
 .table-striped tbody tr:nth-child(2n+1) td,
-.table-striped tbody tr:nth-child(2n+1) th {
+.table-striped tbody tr:nth-child(2n+1) th,
+thead th,
+.rubric_title {
 	background-color: #222 !important;
 }
 
@@ -551,4 +543,25 @@ body.ff .discussionTopicIndexList .discussion-topic .ellipsis::after {
 #context-list .context_list_context:hover {
 	background-color: #222 !important;
 }
+
+#syllabusContainer tbody > tr > td {
+	background-color: rgba(0, 0, 0, 0) !important;
+}
+
+#syllabusContainer .date_passed {
+	background-color: rgba(0, 0, 0, 0.4);
+	color: rgba(255, 255, 255, 0.4);
+}
+
+#syllabusContainer .date_passed a {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.ToDoSidebarItem__Title a,
+.event-details__title {
+	color: var(--ic-link-color-darkened-10);
+}
+
+.event ::after {
+	display: none;
 }
